@@ -2,7 +2,7 @@
 
 ### Getting started
 
-This project is created to help for update AWS Lambda function runtime by batch. The function will update Lambda runtime in $LATEST version.
+Lambda runtime has its life cycle that user will meet Lambda runtime end of support someday. It's a hard work to process the update manually if many Lambda functions are under retiring runtime. This project is created to help for update AWS Lambda function runtime by batch. The function will update Lambda runtime in $LATEST version.
 
 ### Pre-request
 
