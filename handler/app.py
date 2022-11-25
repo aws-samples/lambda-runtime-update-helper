@@ -2,10 +2,10 @@ import boto3
 from botocore.config import Config
 
 # List runtime needs to be updated here
-sourceRuntimeList = ('nodejs14.x',)
+source_runtime_list = ('nodejs14.x',)
 
 # Target update runtime
-targetRuntime = 'nodejs16.x'
+target_runtime = 'nodejs16.x'
 
 # Client config
 client_config = Config(
@@ -26,7 +26,7 @@ def runtime_update_handler():
 
         it = iter(function_list)
         for func in it:
-            if func.get('Runtime') in sourceRuntimeList:
+            if func.get('Runtime') in source_runtime_list:
                 function_list_for_update.append(func.get('FunctionName'))
 
         print('Find ' + str(len(function_list_for_update)) + ' function(s) will be updated.')
@@ -36,7 +36,7 @@ def runtime_update_handler():
 
             for funcName in it_for_update:
                 print('Update function:' + funcName)
-                client.update_function_configuration(FunctionName=funcName, Runtime=targetRuntime)
+                client.update_function_configuration(FunctionName=funcName, Runtime=target_runtime)
 
             function_list_for_update.clear()
 
